@@ -1,0 +1,36 @@
+version: "3.9"
+
+# piskid-lp demo - production-ready POC.
+# 2 services orchestrated:
+#   - piskid-lp (Next.js frontend on host port 3053)
+#   - piskid-lp-backend (FastAPI Python, internal only on 8000)
+# Internal network so the frontend can reach the backend by service name.
+
+services:
+  piskid-lp-backend:
+    image: ghcr.io/wikolabs/piskid-lp-backend:latest
+    container_name: piskid-lp-backend
+    restart: unless-stopped
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    networks:
+      - piskid-lp-net
+
+  piskid-lp:
+    image: ghcr.io/wikolabs/piskid-lp:latest
+    container_name: piskid-lp
+    restart: unless-stopped
+    ports:
+      - "3053:3000"
+    environment:
+      BACKEND_URL: "http://piskid-lp-backend:8000"
+    depends_on:
+      - piskid-lp-backend
+    networks:
+      - piskid-lp-net
+
+networks:
+  piskid-lp-net:
+    name: piskid-lp-net
+    driver: bridge
