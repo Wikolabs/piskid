@@ -16,14 +16,9 @@ jobs:
           VM_HOST: ${{ secrets.WIKOLABS_VM_HOST }}
           VM_USER: ${{ secrets.WIKOLABS_VM_USER }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh -i ~/.ssh/deploy_key \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -o ServerAliveInterval=30 \
-            -o ServerAliveCountMax=30 \
-            "$VM_USER@$VM_HOST" \
-            "set -e; if [ -d /opt/piskid/.git ]; then cd /opt/piskid && git remote set-url origin https://github.com/Wikolabs/piskid-lp.git && git fetch origin main && git reset --hard origin/main; else git clone https://github.com/Wikolabs/piskid-lp.git /opt/piskid && cd /opt/piskid; fi && docker build -t piskid:local . && (docker stop piskid 2>/dev/null; docker rm piskid 2>/dev/null; true) && docker run -d --name piskid -p 3053:3000 -e GROQ_API_KEY=${GROQ_API_KEY} --restart unless-stopped piskid:local && echo 'Deployed piskid on port 3053'"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ServerAliveInterval=30 -o ServerAliveCountMax=30 "$VM_USER@$VM_HOST" "set -e; if [ -d /opt/piskid/.git ]; then cd /opt/piskid && git remote set-url origin https://github.com/Wikolabs/piskid-lp.git && git fetch origin main && git reset --hard origin/main; else git clone https://github.com/Wikolabs/piskid-lp.git /opt/piskid && cd /opt/piskid; fi && docker build -t piskid:local . && (docker stop piskid 2>/dev/null; docker rm piskid 2>/dev/null; true) && docker run -d --name piskid -p 3053:3000 -e GROQ_API_KEY='$GROQ_API_KEY' -e GEMINI_API_KEY='$GEMINI_API_KEY' --restart unless-stopped piskid:local && echo 'Deployed piskid on port 3053'"
