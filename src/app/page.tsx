@@ -5,7 +5,7 @@ import { useState } from "react";
 // CONFIG — Each LP customizes only this block
 // ─────────────────────────────────────────────────────────────────────────────
 const P = {
-  name: "Piskid",
+  name: "iMahay",
   waPhone: "261386626100",
   palette: {
     mode: "dark" as "dark" | "light",
@@ -25,10 +25,10 @@ const P = {
   content: {
     fr: {
       langLabel: "FR",
-      tagLabel: "Conseiller IA · Gratuit · Pour les Malgaches",
-      taglines: ["Votre mpisikidy IA.", "Sans arnaque.", "Conseils gratuits, vrais."],
+      tagLabel: "Faharanitan-tsaina malagasy · Co-creation amin'ireo zokiolona · Anti-arnaque",
+      taglines: ["Ny fahendrena malagasy.", "Mitafy faharanitan-tsaina.", "Mba hanoroana antsika ny lalana."],
       taglineAccentIdx: 1,
-      desc: "Piskid utilise l'IA et des donnees reelles pour vous conseiller sur votre vie — amour, argent, carriere — gratuitement. Fini les faux pasteurs et devins indiens qui vous facturent vos angoisses.",
+      desc: "iMahay dia faharanitan-tsaina artificielle mitafy ny fomba amam-panao malagasy, ny ohabolana, ny kabary, ary ny fahendrena nentin-drazana — iharaharana amin'ireo manampahaizana sy zokiolona mitahiry ny kolontsaina. Conseils gratuits 24/7 amin'ny fiainana (fitiavana, vola, asa).",
       navLinks: [
         { label: "Domaines", href: "#features" },
         { label: "Comment ca marche", href: "#process" },
@@ -42,9 +42,9 @@ const P = {
         { value: "Mada", label: "contexte local" },
       ],
       features: [
-        { icon: "💔", title: "Amour et famille", desc: "Difficultes relationnelles, rupture, conflits familiaux, mariage. L'IA ecoute sans juger et propose des pistes concretes adaptees au contexte malgache." },
-        { icon: "💰", title: "Argent et finances", desc: "Dettes, epargne, mauvaise gestion, investissements a Madagascar. Conseils precis, sans bavardage spirituel ni demande de cadeau au mpisikidy." },
-        { icon: "🚀", title: "Projets et carriere", desc: "Projet qui echoue, recherche d'emploi, entrepreneuriat, reconversion. L'IA cite les opportunites concretes : Unipod, Maison du Numerique, JCI, BNI Madagascar." },
+        { icon: "📜", title: "Kolontsaina & Fahendrena malagasy", desc: "Iharaharana amin'ireo Ray Aman-dreny lehibe sy mpikabary mitahiry ny ohabolana, ny tonon-kira, ary ny fomba amam-panao. Ny kolontsaina malagasy dia harena tsy hananan'ny firenen-kafa." },
+        { icon: "💔", title: "Fitiavana & Fianakaviana", desc: "Olana amin'ny vady, ady ankohonana, fanambadiana. iMahay mihaino tsy mitsara, manolotra hevitra mifanaraka amin'ny tontolo malagasy sy ny fahendrena nentin-drazana." },
+        { icon: "💰", title: "Vola & Asa fivelomana", desc: "Trosa, fitehirizam-bola, asa, fandraharahana eto Madagasikara. Toro-hevitra mazava — tsy misy hangataka kalfa fotsy na 80 000 Ar mialoha." },
       ],
       steps: [
         { num: "01", title: "Ecrivez votre situation", desc: "Decrivez ce que vous vivez en malagasy ou en francais. Aucun jugement. Aucune facturation. Aucun rdv chez un pasteur a 50 000 Ar." },
