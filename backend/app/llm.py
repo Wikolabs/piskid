@@ -59,7 +59,13 @@ async def _call_gemini(messages: List[Dict[str, str]], max_tokens: int) -> str:
     url = GEMINI_URL.format(model=GEMINI_MODEL) + f"?key={key}"
     body = {
         "contents": contents,
-        "generationConfig": {"temperature": 0.6, "maxOutputTokens": max_tokens},
+        "generationConfig": {
+            "temperature": 0.6,
+            "maxOutputTokens": max_tokens,
+            # Disable Gemini 2.5 internal thinking phase — it consumes most of the
+            # token budget before producing visible text and our prompts are short.
+            "thinkingConfig": {"thinkingBudget": 0},
+        },
     }
     if system:
         body["systemInstruction"] = {"parts": [{"text": system}]}
