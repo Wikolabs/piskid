@@ -1,4 +1,1 @@
-.next/
-node_modules/
-out/
-.env*
+node_modules

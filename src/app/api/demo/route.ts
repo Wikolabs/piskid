@@ -3,25 +3,22 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// In docker-compose: BACKEND_URL=http://piskid-lp-backend:8000
-// In local dev (next dev outside compose): falls back to localhost
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8000";
 
 export async function POST(req: Request) {
-  let body: { question?: string; topic?: string; lang?: "fr" | "en" } = {};
+  let body: { question?: string; lang?: "fr" | "en" } = {};
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
 
-  const question = typeof body.question === "string" ? body.question.trim().slice(0, 700) : "";
-  const topic = typeof body.topic === "string" ? body.topic.trim().slice(0, 40) : "";
+  const question = (body.question || "").trim().slice(0, 1500);
   const lang: "fr" | "en" = body.lang === "en" ? "en" : "fr";
 
   if (!question) {
     return NextResponse.json(
-      { error: lang === "fr" ? "Posez votre question juridique." : "Ask your legal question." },
+      { error: lang === "fr" ? "Pose ta question." : "Ask your question." },
       { status: 400 }
     );
   }
@@ -30,7 +27,7 @@ export async function POST(req: Request) {
     const r = await fetch(`${BACKEND_URL}/process`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ legal_question: question, topic, lang }),
+      body: JSON.stringify({ question, lang }),
       cache: "no-store",
     });
     const j = await r.json();
@@ -38,7 +35,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: j.detail || "backend_error" }, { status: r.status });
     }
     return NextResponse.json({
-      output: j.output,
+      reply: j.reply,
       model: j.model,
       generatedAt: j.generated_at,
       staticMode: Boolean(j.static_mode),
