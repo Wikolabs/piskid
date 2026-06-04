@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#FAF8F1"/>
       <stop offset="100%" stop-color="#F5F1E6"/>
     </linearGradient>
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#16A34A"/>
       <stop offset="50%" stop-color="#D97706"/>
       <stop offset="100%" stop-color="#DC2626"/>
@@ -16,53 +16,60 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- ambient dust dots -->
+  <!-- Side aloalo decorations -->
+  <g transform="translate(80 250) scale(0.8)" opacity="0.10">
+    <circle cx="32" cy="10" r="5" stroke="#78350F" stroke-width="2" fill="none"/>
+    <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="#78350F" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="#78350F" stroke-width="1.8" fill="none"/>
+    <circle cx="32" cy="50" r="6" stroke="#78350F" stroke-width="1.6" fill="none"/>
+    <rect x="29" y="56" width="6" height="50" stroke="#78350F" stroke-width="1.6" fill="none"/>
+  </g>
+  <g transform="translate(1060 240) scale(0.85)" opacity="0.10">
+    <circle cx="32" cy="10" r="5" stroke="#DC2626" stroke-width="2" fill="none"/>
+    <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="#DC2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="#DC2626" stroke-width="1.8" fill="none"/>
+    <circle cx="32" cy="50" r="6" stroke="#DC2626" stroke-width="1.6" fill="none"/>
+    <rect x="29" y="56" width="6" height="50" stroke="#DC2626" stroke-width="1.6" fill="none"/>
+  </g>
+
+  <!-- dust dots -->
   <g opacity="0.5">
-    <circle cx="120"  cy="120" r="6" fill="#16A34A"/>
-    <circle cx="220"  cy="510" r="5" fill="#DC2626"/>
-    <circle cx="990"  cy="100" r="6" fill="#D97706"/>
-    <circle cx="1100" cy="540" r="5" fill="#16A34A"/>
-    <circle cx="90"   cy="380" r="4" fill="#D97706"/>
-    <circle cx="1080" cy="340" r="4" fill="#DC2626"/>
+    <circle cx="200"  cy="120" r="6" fill="#16A34A"/>
+    <circle cx="320"  cy="500" r="5" fill="#DC2626"/>
+    <circle cx="900"  cy="100" r="6" fill="#D97706"/>
+    <circle cx="980"  cy="540" r="5" fill="#16A34A"/>
+    <circle cx="180"  cy="380" r="4" fill="#D97706"/>
+    <circle cx="1000" cy="340" r="4" fill="#DC2626"/>
   </g>
 
-  <!-- Decorative baobab silhouettes on the sides -->
-  <g transform="translate(60 380) scale(2)" opacity="0.08">
-    <path d="M28 50 L28 36 C 28 34 30 33 32 33 C 34 33 36 34 36 36 L 36 50 Z" fill="#78350F"/>
-    <path d="M32 33 C 22 30 16 22 14 14 C 18 18 24 20 28 18 M32 33 C 42 30 48 22 50 14 C 46 18 40 20 36 18 M32 33 C 32 26 28 18 22 10 M32 33 C 32 26 36 18 42 10"
-          stroke="#78350F" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-  </g>
-  <g transform="translate(1060 360) scale(1.8) rotate(8)" opacity="0.07">
-    <path d="M28 50 L28 36 C 28 34 30 33 32 33 C 34 33 36 34 36 36 L 36 50 Z" fill="#DC2626"/>
-    <path d="M32 33 C 22 30 16 22 14 14 M32 33 C 42 30 48 22 50 14 M32 33 C 32 26 28 18 22 10 M32 33 C 32 26 36 18 42 10"
-          stroke="#DC2626" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-  </g>
-
-  <!-- Logo centered -->
-  <g transform="translate(540 100)">
+  <!-- Central iMahay aloalo logo -->
+  <g transform="translate(540 90)">
     <circle cx="60" cy="60" r="62" fill="url(#glow)"/>
-    <g transform="translate(28 28) scale(1.6)">
-      <path d="M28 50 L28 36 C 28 34 30 33 32 33 C 34 33 36 34 36 36 L 36 50 Z" fill="url(#titleGrad)"/>
-      <path d="M32 33 C 22 30 16 22 14 14 C 18 18 24 20 28 18 M32 33 C 42 30 48 22 50 14 C 46 18 40 20 36 18 M32 33 C 32 26 28 18 22 10 C 26 14 30 16 32 16 M32 33 C 32 26 36 18 42 10 C 38 14 34 16 32 16"
-            stroke="url(#titleGrad)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <g transform="translate(28 18) scale(1.6)">
+      <circle cx="32" cy="10" r="5" stroke="url(#bodyGrad)" stroke-width="2" fill="none"/>
+      <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="url(#bodyGrad)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="url(#bodyGrad)" stroke-width="1.8" fill="none"/>
+      <path d="M32 26 L 32 34 M28 30 L 36 30" stroke="url(#bodyGrad)" stroke-width="1.4"/>
+      <circle cx="32" cy="44" r="4" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
+      <rect x="29.5" y="48" width="5" height="11" rx="1" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
     </g>
   </g>
 
   <!-- Brand -->
   <text x="600" y="370" font-family="Playfair Display, Georgia, serif" font-size="118" font-weight="700"
-        text-anchor="middle" fill="url(#titleGrad)" letter-spacing="-2">
+        text-anchor="middle" letter-spacing="-2">
     <tspan fill="#14532D">i</tspan><tspan fill="#1A1A1A">Mahay</tspan><tspan fill="#DC2626">.</tspan>
   </text>
 
   <!-- Tagline -->
   <text x="600" y="440" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-style="italic"
-        text-anchor="middle" fill="#525252">La sagesse malgache te parle. Maintenant.</text>
+        text-anchor="middle" fill="#525252">Ny fahendren'ny razana miteny aminao izao.</text>
 
-  <!-- Sub-tagline -->
+  <!-- Badge -->
   <g transform="translate(600 510)">
-    <rect x="-185" y="-22" width="370" height="44" rx="22" fill="#DCFCE7" stroke="#16A34A" stroke-opacity="0.30" stroke-width="1.2"/>
-    <text x="0" y="6" font-family="Playfair Display, Georgia, serif" font-size="16" font-weight="700"
-          text-anchor="middle" fill="#14532D" letter-spacing="3">FAHARANITAN-TSAINA MALAGASY</text>
+    <rect x="-200" y="-22" width="400" height="44" rx="22" fill="#DCFCE7" stroke="#16A34A" stroke-opacity="0.30" stroke-width="1.2"/>
+    <text x="0" y="6" font-family="Playfair Display, Georgia, serif" font-size="15" font-weight="700"
+          text-anchor="middle" fill="#14532D" letter-spacing="2.5">ZOKIOLONA · OLO-BE · MANAM-PAHAIZANA</text>
   </g>
 
   <!-- Bottom verse -->

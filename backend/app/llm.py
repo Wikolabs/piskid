@@ -73,19 +73,19 @@ async def _call_gemini(messages: List[Dict[str, str]], max_tokens: int) -> str:
 
 
 async def chat(messages: List[Dict[str, str]], max_tokens: int = 900) -> Tuple[str, str]:
-    """Returns (text, model_name). Raises RuntimeError if no provider available."""
-    if _groq_key():
-        try:
-            text = await _call_groq(messages, max_tokens)
-            if text:
-                return text, GROQ_MODEL
-        except Exception:
-            pass
+    """Returns (text, model_name). Gemini primary (better Malagasy mastery), Groq fallback."""
     if _gemini_key():
         try:
             text = await _call_gemini(messages, max_tokens)
             if text:
                 return text, GEMINI_MODEL
+        except Exception:
+            pass
+    if _groq_key():
+        try:
+            text = await _call_groq(messages, max_tokens)
+            if text:
+                return text, GROQ_MODEL
         except Exception:
             pass
     raise RuntimeError("no_llm_available")
