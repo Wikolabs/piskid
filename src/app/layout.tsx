@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://imahay.com"),
-  title: "iMahay.com — L'expert IA en sagesse malgache",
+  title: "iMahay.com · L'expert IA en sagesse malgache",
   description:
     "iMahay est un expert IA formé sur les ohabolana, le kabary et les fomba. Gratuit, anonyme, disponible 24/7. Et te protège contre les faux mpisikidy.",
   keywords: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "iMahay.com — L'expert IA en sagesse malgache",
+    title: "iMahay.com · L'expert IA en sagesse malgache",
     description:
-      "Faharanitan-tsaina malagasy. Gratuit, anonyme, 24/7. Ohabolana, kabary, fomba — et protection contre les faux mpisikidy.",
+      "Faharanitan-tsaina malagasy. Gratuit, anonyme, 24/7. Ohabolana, kabary, fomba · et protection contre les faux mpisikidy.",
     type: "website",
     locale: "fr_FR",
     siteName: "iMahay.com",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "iMahay — La sagesse malgache te parle.",
+        alt: "iMahay · La sagesse malgache te parle.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "iMahay.com — L'expert IA en sagesse malgache",
+    title: "iMahay.com · L'expert IA en sagesse malgache",
     description: "Faharanitan-tsaina malagasy. Gratuit, anonyme, 24/7.",
     images: ["/og-image.png"],
   },

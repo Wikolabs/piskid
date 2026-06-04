@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -75,7 +75,7 @@ const OHABOLANA: Array<{ theme: Theme; mg: string; fr: string; meaning: string }
     theme: "fanaovan-tsoa",
     mg: "Ny tanana tsy miankin-doha, fa ny atao no miverina.",
     fr: "La main ne se pose pas sur la tête, c'est ce qu'on fait qui revient.",
-    meaning: "Hevitra : ny soa atao dia miverina amin'ny tena ihany — ny ratsy koa toy izany.",
+    meaning: "Hevitra : ny soa atao dia miverina amin'ny tena ihany · ny ratsy koa toy izany.",
   },
   {
     theme: "fanaovan-tsoa",
@@ -87,7 +87,7 @@ const OHABOLANA: Array<{ theme: Theme; mg: string; fr: string; meaning: string }
     theme: "fanaovan-tsoa",
     mg: "Hitsikitsika tsy mandihy foana fa ao raha.",
     fr: "Le faucon ne danse pas sans raison : il y a quelque chose.",
-    meaning: "Hevitra : misy antony sy antony foana ny fihetsika hafahafa na miafina ataon'ny olona iray — mariho.",
+    meaning: "Hevitra : misy antony sy antony foana ny fihetsika hafahafa na miafina ataon'ny olona iray · mariho.",
   },
 ];
 
@@ -96,7 +96,7 @@ const CHAPTERS = [
     key: "ohabolana",
     title: "Ohabolana",
     fr: "Proverbes",
-    desc: "Arivo taona feno fahendrena tafiditra anaty teny vitsivitsy — ampita avy amin'ny taranaka iray ho amin'ny iray.",
+    desc: "Arivo taona feno fahendrena tafiditra anaty teny vitsivitsy · ampita avy amin'ny taranaka iray ho amin'ny iray.",
     color: C.green,
     bg: C.greenSoft,
     glow: C.greenGlow,
@@ -116,7 +116,7 @@ const CHAPTERS = [
     key: "fomba",
     title: "Fomba",
     fr: "Coutumes",
-    desc: "Famadihana, fihavanana, hasina — ireo fanaon-drazana mamatotra ny maha-malagasy mandritra ny taonjato.",
+    desc: "Famadihana, fihavanana, hasina · ireo fanaon-drazana mamatotra ny maha-malagasy mandritra ny taonjato.",
     color: C.gold,
     bg: C.goldSoft,
     glow: C.goldGlow,
@@ -169,18 +169,18 @@ function Icon({ name, color, size = 40 }: { name: "tree" | "voice" | "compass" |
   );
 }
 
-// ─── Aloalo silhouette — traditional Malagasy funerary art post ────────────────
+// ─── Aloalo silhouette · traditional Malagasy funerary art post ────────────────
 // Zebu head + horns pointing UP, then diamond, figure, medallion, post, base.
 function Aloalo({ size = 200, color = C.earth, opacity = 0.08 }: { size?: number; color?: string; opacity?: number }) {
   return (
     <svg width={size} height={size * 2.4} viewBox="0 0 80 192" fill="none" style={{ opacity }}>
-      {/* Zebu HORNS — smooth half-circle curves */}
+      {/* Zebu HORNS · smooth half-circle curves */}
       <path d="M32 26 C 16 26, 8 14, 16 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
       <path d="M48 26 C 64 26, 72 14, 64 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
       {/* Zebu HEAD circle */}
       <circle cx="40" cy="28" r="9" stroke={color} strokeWidth="1.6" fill="none" />
       <circle cx="40" cy="28" r="1.8" fill={color} />
-      {/* Diamond carving — touches head bottom (no gap) */}
+      {/* Diamond carving · touches head bottom (no gap) */}
       <path d="M40 37 L 52 50 L 40 62 L 28 50 Z" stroke={color} strokeWidth="1.4" fill="none" />
       {/* Inner cross */}
       <path d="M40 43 L 40 56 M34 50 L 46 50" stroke={color} strokeWidth="1.2" />
@@ -213,7 +213,7 @@ function Wordmark({ size = 22 }: { size?: number }) {
   );
 }
 
-// ─── Central chatbot widget — the hero centerpiece ─────────────────────────────
+// ─── Central chatbot widget · the hero centerpiece ─────────────────────────────
 interface ChatMsg { role: "user" | "assistant"; content: string; }
 
 function CentralChat() {
@@ -281,7 +281,7 @@ function CentralChat() {
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: C.green, boxShadow: `0 0 12px ${C.green}`, animation: "pulseDot 2s ease-in-out infinite" }} />
             <span style={{ fontFamily: DISPLAY, fontSize: 14, fontWeight: 700, color: C.text }}>
-              iMahay — <span style={{ color: C.greenDeep, fontStyle: "italic" }}>Ilay Mpampianatra</span>
+              iMahay · <span style={{ color: C.greenDeep, fontStyle: "italic" }}>Ilay Mpampianatra</span>
             </span>
           </div>
           <span style={{ fontFamily: SERIF, fontSize: 11, fontStyle: "italic", color: C.textMuted }}>
@@ -305,7 +305,7 @@ function CentralChat() {
                 « Mahaiza mametra-panontaniana. »
               </div>
               <div style={{ fontFamily: SERIF, fontSize: 14, color: C.textMuted, fontStyle: "italic", marginBottom: 6 }}>
-                Apetraho ny fanontanianao — momba ny fiainana, ny fihavanana, ny ahiahy.
+                Apetraho ny fanontanianao · momba ny fiainana, ny fihavanana, ny ahiahy.
               </div>
               <div style={{ fontSize: 12, color: C.textSoft, marginBottom: 22 }}>
                 Hisy valiny avy amin&apos;ny mpampianatra.
@@ -443,7 +443,7 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Aloalo silhouettes — traditional Mahafaly funerary art */}
+      {/* Aloalo silhouettes · traditional Mahafaly funerary art */}
       <div style={{ position: "absolute", top: 80, left: 20, zIndex: 0, pointerEvents: "none" }}>
         <Aloalo size={120} color={C.green} opacity={0.10} />
       </div>
@@ -547,7 +547,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── MPAMPIANATRA — Sources of wisdom ─────────────────────────────────── */}
+      {/* ─── MPAMPIANATRA · Sources of wisdom ─────────────────────────────────── */}
       <section id="mpampianatra" style={{ padding: "80px 24px", position: "relative", zIndex: 1, background: `linear-gradient(180deg, ${C.white} 0%, ${C.parchment} 100%)` }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
           <div style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: C.gold, textTransform: "uppercase", marginBottom: 12 }}>
@@ -557,7 +557,7 @@ export default function Home() {
             <em style={{ fontFamily: SERIF, fontStyle: "italic", color: C.greenDeep }}>Tsy avy</em> amin&apos;ny mpanao siansa irery.
           </h2>
           <p style={{ fontFamily: SERIF, fontSize: "1.1rem", color: C.textMuted, maxWidth: 620, margin: "0 auto 40px", fontStyle: "italic" }}>
-            Avy amin&apos;ny olona — ireo izay nitahiry sy nampita ny faharanitan-tsaina malagasy nandritra ny taonjato.
+            Avy amin&apos;ny olona · ireo izay nitahiry sy nampita ny faharanitan-tsaina malagasy nandritra ny taonjato.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, maxWidth: 900, margin: "0 auto" }}>
             {SOURCES.map((s, i) => (
@@ -592,7 +592,7 @@ export default function Home() {
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
             <div style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: C.greenDeep, textTransform: "uppercase", marginBottom: 12 }}>
-              Ohabolana — Voafantina
+              Ohabolana · Voafantina
             </div>
             <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(2rem, 4.5vw, 3.4rem)", fontWeight: 600, color: C.text, margin: "0 0 14px", lineHeight: 1.15 }}>
               Arivo taona feno{" "}
@@ -718,7 +718,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── LALANA — Sentier de vie ───────────────────────────────────────── */}
+      {/* ─── LALANA · Sentier de vie ───────────────────────────────────────── */}
       <section id="lalana" style={{ padding: "100px 24px", position: "relative", zIndex: 1, background: `linear-gradient(180deg, ${C.white} 0%, ${C.goldSoft} 100%)` }}>
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
           <div
@@ -732,7 +732,7 @@ export default function Home() {
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <Icon name="compass" color={C.gold} size={36} />
               <div style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: C.gold, textTransform: "uppercase" }}>
-                Lalana — Sentier de vie
+                Lalana · Sentier de vie
               </div>
             </div>
             <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 600, color: C.text, margin: "0 0 18px", lineHeight: 1.2 }}>
@@ -741,21 +741,22 @@ export default function Home() {
             <p style={{ fontFamily: SERIF, fontSize: "1.15rem", lineHeight: 1.7, color: C.textMuted, margin: "0 0 16px", fontStyle: "italic" }}>
               Rehefa tojo ny sarotra sy ny olana, dia mila <strong style={{ color: C.greenDeep }}>fanazavana mazava</strong> sy
               {" "}<strong style={{ color: C.gold }}>torohevitra azo itokisana</strong>. iMahay mihaino aloha, manaja ny safidinao,
-              ary manoro ny dingana tokony ho atao mba hahafahana mamindra amim-pahatoniana — araka ny fahendrena nentin-drazana.
+              ary manoro ny dingana tokony ho atao mba hahafahana mamindra amim-pahatoniana · araka ny fahendrena nentin-drazana.
             </p>
             <p style={{ fontFamily: SERIF, fontSize: "0.95rem", lineHeight: 1.6, color: C.textSoft, margin: "0 0 24px", fontStyle: "italic" }}>
               <em>iMahay accompagne : il indique le chemin à suivre pour savoir avancer quand on traverse une difficulté.</em>
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", columnGap: 28, rowGap: 12, marginTop: 4 }}>
               {[
                 { label: "Maimaim-poana", color: C.green },
                 { label: "Tsy tonon-anarana", color: C.gold },
                 { label: "Mihaino aloha", color: C.greenDeep },
                 { label: "Manoro ny lalana", color: C.red },
               ].map((b) => (
-                <div key={b.label} style={{ padding: "8px 16px", borderRadius: 100, background: `${b.color}15`, border: `1px solid ${b.color}30`, color: b.color, fontSize: 13, fontWeight: 600, fontFamily: DISPLAY }}>
-                  ✓ {b.label}
-                </div>
+                <span key={b.label} style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: SERIF, fontSize: 14, color: C.text }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: b.color, display: "inline-block", flexShrink: 0 }} />
+                  {b.label}
+                </span>
               ))}
             </div>
           </div>
@@ -812,7 +813,7 @@ export default function Home() {
             </span>
           </p>
           <p style={{ fontSize: 12, color: C.textSoft, margin: 0 }}>
-            © {new Date().getFullYear()} iMahay — Faharanitan-tsaina malagasy. Maimaim-poana · 24/7.
+            © {new Date().getFullYear()} iMahay · Faharanitan-tsaina malagasy. Maimaim-poana · 24/7.
           </p>
         </div>
       </footer>
