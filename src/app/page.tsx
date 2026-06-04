@@ -212,7 +212,6 @@ function CentralChat() {
     <div
       style={{
         position: "relative",
-        background: C.white,
         borderRadius: 28,
         padding: 2,
         background: `linear-gradient(135deg, ${C.green} 0%, ${C.gold} 50%, ${C.red} 100%)`,
