@@ -16,20 +16,22 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Side aloalo decorations -->
-  <g transform="translate(80 250) scale(0.8)" opacity="0.10">
-    <circle cx="32" cy="10" r="5" stroke="#78350F" stroke-width="2" fill="none"/>
-    <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="#78350F" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-    <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="#78350F" stroke-width="1.8" fill="none"/>
-    <circle cx="32" cy="50" r="6" stroke="#78350F" stroke-width="1.6" fill="none"/>
-    <rect x="29" y="56" width="6" height="50" stroke="#78350F" stroke-width="1.6" fill="none"/>
+  <!-- Side aloalo decorations (zebu head + horns up) -->
+  <g transform="translate(80 250) scale(0.85)" opacity="0.10">
+    <path d="M28 13 Q 22 8 18 3" stroke="#78350F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M36 13 Q 42 8 46 3" stroke="#78350F" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <circle cx="32" cy="17" r="5" stroke="#78350F" stroke-width="1.6" fill="none"/>
+    <path d="M32 26 L 40 34 L 32 42 L 24 34 Z" stroke="#78350F" stroke-width="1.6" fill="none"/>
+    <circle cx="32" cy="52" r="5" stroke="#78350F" stroke-width="1.4" fill="none"/>
+    <rect x="29" y="58" width="6" height="48" stroke="#78350F" stroke-width="1.4" fill="none"/>
   </g>
   <g transform="translate(1060 240) scale(0.85)" opacity="0.10">
-    <circle cx="32" cy="10" r="5" stroke="#DC2626" stroke-width="2" fill="none"/>
-    <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="#DC2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-    <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="#DC2626" stroke-width="1.8" fill="none"/>
-    <circle cx="32" cy="50" r="6" stroke="#DC2626" stroke-width="1.6" fill="none"/>
-    <rect x="29" y="56" width="6" height="50" stroke="#DC2626" stroke-width="1.6" fill="none"/>
+    <path d="M28 13 Q 22 8 18 3" stroke="#DC2626" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M36 13 Q 42 8 46 3" stroke="#DC2626" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <circle cx="32" cy="17" r="5" stroke="#DC2626" stroke-width="1.6" fill="none"/>
+    <path d="M32 26 L 40 34 L 32 42 L 24 34 Z" stroke="#DC2626" stroke-width="1.6" fill="none"/>
+    <circle cx="32" cy="52" r="5" stroke="#DC2626" stroke-width="1.4" fill="none"/>
+    <rect x="29" y="58" width="6" height="48" stroke="#DC2626" stroke-width="1.4" fill="none"/>
   </g>
 
   <!-- dust dots -->
@@ -42,16 +44,18 @@
     <circle cx="1000" cy="340" r="4" fill="#DC2626"/>
   </g>
 
-  <!-- Central iMahay aloalo logo -->
+  <!-- Central iMahay aloalo logo (zebu head + horns up) -->
   <g transform="translate(540 90)">
     <circle cx="60" cy="60" r="62" fill="url(#glow)"/>
     <g transform="translate(28 18) scale(1.6)">
-      <circle cx="32" cy="10" r="5" stroke="url(#bodyGrad)" stroke-width="2" fill="none"/>
-      <path d="M22 19 Q 30 14 32 16 Q 34 14 42 19" stroke="url(#bodyGrad)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      <path d="M32 22 L 40 30 L 32 38 L 24 30 Z" stroke="url(#bodyGrad)" stroke-width="1.8" fill="none"/>
-      <path d="M32 26 L 32 34 M28 30 L 36 30" stroke="url(#bodyGrad)" stroke-width="1.4"/>
-      <circle cx="32" cy="44" r="4" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
-      <rect x="29.5" y="48" width="5" height="11" rx="1" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
+      <path d="M28 13 Q 22 8 18 3" stroke="url(#bodyGrad)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M36 13 Q 42 8 46 3" stroke="url(#bodyGrad)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <circle cx="32" cy="17" r="5" stroke="url(#bodyGrad)" stroke-width="1.8" fill="none"/>
+      <circle cx="32" cy="17" r="1" fill="url(#bodyGrad)"/>
+      <path d="M32 26 L 40 34 L 32 42 L 24 34 Z" stroke="url(#bodyGrad)" stroke-width="1.8" fill="none"/>
+      <path d="M32 30 L 32 38 M28 34 L 36 34" stroke="url(#bodyGrad)" stroke-width="1.4"/>
+      <circle cx="32" cy="48" r="4" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
+      <rect x="29.5" y="52" width="5" height="7" rx="1" stroke="url(#bodyGrad)" stroke-width="1.6" fill="none"/>
     </g>
   </g>
 
