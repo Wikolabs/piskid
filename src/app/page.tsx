@@ -174,27 +174,27 @@ function Icon({ name, color, size = 40 }: { name: "tree" | "voice" | "compass" |
 function Aloalo({ size = 200, color = C.earth, opacity = 0.08 }: { size?: number; color?: string; opacity?: number }) {
   return (
     <svg width={size} height={size * 2.4} viewBox="0 0 80 192" fill="none" style={{ opacity }}>
-      {/* Zebu HORNS — sweep up and out (left + right) */}
-      <path d="M32 24 Q 22 14 14 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
-      <path d="M48 24 Q 58 14 66 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
+      {/* Zebu HORNS — smooth half-circle curves */}
+      <path d="M32 26 C 16 26, 8 14, 16 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
+      <path d="M48 26 C 64 26, 72 14, 64 4"  stroke={color} strokeWidth="2.2" fill="none" strokeLinecap="round" />
       {/* Zebu HEAD circle */}
-      <circle cx="40" cy="28" r="8" stroke={color} strokeWidth="1.6" fill="none" />
-      <circle cx="40" cy="28" r="1.5" fill={color} />
-      {/* Diamond carving (body decoration) */}
-      <path d="M40 42 L 52 54 L 40 66 L 28 54 Z" stroke={color} strokeWidth="1.4" fill="none" />
+      <circle cx="40" cy="28" r="9" stroke={color} strokeWidth="1.6" fill="none" />
+      <circle cx="40" cy="28" r="1.8" fill={color} />
+      {/* Diamond carving — touches head bottom (no gap) */}
+      <path d="M40 37 L 52 50 L 40 62 L 28 50 Z" stroke={color} strokeWidth="1.4" fill="none" />
       {/* Inner cross */}
-      <path d="M40 48 L 40 60 M34 54 L 46 54" stroke={color} strokeWidth="1.2" />
+      <path d="M40 43 L 40 56 M34 50 L 46 50" stroke={color} strokeWidth="1.2" />
       {/* Stylized figure (head + body) */}
-      <circle cx="40" cy="76" r="5" stroke={color} strokeWidth="1.4" fill="none" />
-      <path d="M40 81 L 40 99 M 32 88 L 48 88 M 36 99 L 32 114 M 44 99 L 48 114"
+      <circle cx="40" cy="72" r="5" stroke={color} strokeWidth="1.4" fill="none" />
+      <path d="M40 77 L 40 95 M 32 84 L 48 84 M 36 95 L 32 110 M 44 95 L 48 110"
             stroke={color} strokeWidth="1.6" strokeLinecap="round" fill="none" />
       {/* Lower circle ornament */}
-      <circle cx="40" cy="124" r="8" stroke={color} strokeWidth="1.4" fill="none" />
-      <path d="M32 124 L 48 124 M 40 116 L 40 132" stroke={color} strokeWidth="1.2" />
+      <circle cx="40" cy="120" r="8" stroke={color} strokeWidth="1.4" fill="none" />
+      <path d="M32 120 L 48 120 M 40 112 L 40 128" stroke={color} strokeWidth="1.2" />
       {/* Vertical post */}
-      <rect x="36" y="134" width="8" height="54" rx="1.5" stroke={color} strokeWidth="1.4" fill="none" />
+      <rect x="36" y="130" width="8" height="58" rx="1.5" stroke={color} strokeWidth="1.4" fill="none" />
       {/* Triangular notches on post */}
-      <path d="M36 148 L 32 151 L 36 154 Z M44 148 L 48 151 L 44 154 Z M36 164 L 32 167 L 36 170 Z M44 164 L 48 167 L 44 170 Z"
+      <path d="M36 145 L 32 148 L 36 151 Z M44 145 L 48 148 L 44 151 Z M36 162 L 32 165 L 36 168 Z M44 162 L 48 165 L 44 168 Z"
             fill={color} opacity="0.7" />
       {/* Base mound */}
       <ellipse cx="40" cy="190" rx="14" ry="2.5" fill={color} opacity="0.6" />
