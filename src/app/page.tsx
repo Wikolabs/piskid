@@ -28,38 +28,66 @@ const C = {
 const SERIF = `"Cormorant Garamond", Georgia, serif`;
 const DISPLAY = `"Playfair Display", Georgia, serif`;
 
-// ─── Verified authentic Malagasy ohabolana ────────────────────────────────────
-// Sources : tahiry mpampianatra fanao malagasy (Cousins, Houlder, ohabolana.org).
-const OHABOLANA = [
+// ─── Verified Malagasy ohabolana grouped by theme ─────────────────────────────
+type Theme = "fihavanana" | "fahendrena" | "fanaovan-tsoa";
+
+const THEMES: Record<Theme, { label: string; fr: string; color: string; bg: string }> = {
+  "fihavanana":     { label: "Fihavanana sy Firaisankina", fr: "Parenté & solidarité",   color: C.greenDeep, bg: C.greenSoft },
+  "fahendrena":     { label: "Fahendrena sy Fikarohana",   fr: "Sagesse & réflexion",    color: C.gold,      bg: C.goldSoft },
+  "fanaovan-tsoa":  { label: "Fanaovan-tsoa sy Fitondrantena", fr: "Bienfaisance & conduite", color: C.red,   bg: C.redSoft },
+};
+
+const OHABOLANA: Array<{ theme: Theme; mg: string; fr: string; meaning: string }> = [
+  // ── Fihavanana sy Firaisankina ────────────────────────────────────────────
   {
-    mg: "Aleo very tsikalakalan-karena toy izay very tsikalakalam-pihavanana.",
-    fr: "Mieux vaut perdre un peu d'argent que de perdre un peu du lien de parenté.",
-    meaning: "Hevitra : mihoatra ny vola sy ny harena ny fihavanana. Aza atakalo amin'ny anjara kely ny rohim-pihavanana.",
+    theme: "fihavanana",
+    mg: "Ny fitiavana toy ny lamban'akoho, ka faty no hisarahana.",
+    fr: "L'amour est comme le plumage de la poule : seule la mort en sépare.",
+    meaning: "Hevitra : manasongadina ny fitiavana sy ny fihavanana mafy orina tsy misy mahasara-tsika afa-tsy ny fahafatesana.",
   },
   {
-    mg: "Ny fihavanana toy ny landihazo, mora tapaka raha hetsehina mafy.",
-    fr: "Le fihavanana est comme la soie : il rompt facilement si on le manipule brutalement.",
-    meaning: "Hevitra : ny rohy mamato ny olona dia mila hatsaram-panahy sy faharetana. Ataovy malefaka ny fitondrana ny havana.",
+    theme: "fihavanana",
+    mg: "Ny havana toy ny volon-kirihitra : raha tsy very dia mifampitady.",
+    fr: "Les parents sont comme les poils ras : s'ils ne se perdent pas, ils se cherchent toujours.",
+    meaning: "Hevitra : ny havana na dia maro sy misampantsampana aza dia mbola mifanampy ihany rehefa misy ny olana.",
   },
   {
-    mg: "Ny teny tsy mba mafy fa ny vato no mafy.",
-    fr: "Ce n'est pas la parole qui est dure, c'est la pierre.",
-    meaning: "Hevitra : ny teny dia mahay manimba na manasitrana — fidio amim-pitandremana, fa ny ratra avy amin'ny teny dia ela vao sitrana.",
+    theme: "fihavanana",
+    mg: "Asa vadi-drano, tsy vita raha tsy ifanakonana.",
+    fr: "Travail à deux comme un canal d'eau : impossible sans coopération.",
+    meaning: "Hevitra : misy asa tsy vita raha tsy iraisan'ny rehetra sy ifanampiana.",
+  },
+  // ── Fahendrena sy Fikarohana Hevitra ──────────────────────────────────────
+  {
+    theme: "fahendrena",
+    mg: "Ny hevitry ny maro mahataka-davitra.",
+    fr: "La pensée du grand nombre porte loin.",
+    meaning: "Hevitra : ny fiaraha-midinika sy ny fihainoana ny maro dia mitondra vokatra lavitra kokoa noho ny fijerin'ny olona iray.",
   },
   {
-    mg: "Tsy misy hazo tsy mihofahofa.",
-    fr: "Aucun arbre ne reste immobile (sans osciller).",
-    meaning: "Hevitra : ny olon-drehetra, na ny matanjaka aza, dia iharan'ny fitsapana. Mariho fa tsy irery ialahy.",
+    theme: "fahendrena",
+    mg: "Raha tsy misy ny mandamina, ny adala no mpanapaka.",
+    fr: "Sans organisateur, c'est l'insensé qui décide.",
+    meaning: "Hevitra : rehefa tsy misy ny hendry mitondra ny fanapahan-kevitra dia ny tsy ampy saina no manjaka.",
+  },
+  // ── Fanaovan-tsoa sy Fitondrantena ────────────────────────────────────────
+  {
+    theme: "fanaovan-tsoa",
+    mg: "Ny tanana tsy miankin-doha, fa ny atao no miverina.",
+    fr: "La main ne se pose pas sur la tête, c'est ce qu'on fait qui revient.",
+    meaning: "Hevitra : ny soa atao dia miverina amin'ny tena ihany — ny ratsy koa toy izany.",
   },
   {
-    mg: "Aleo maty rahampitso toy izay maty androany.",
-    fr: "Mieux vaut mourir demain qu'aujourd'hui.",
-    meaning: "Hevitra : aza kivy androany. Ny rahampitso dia mety hitondra valiny izay tsy hita androany — mahareta amim-panantenana.",
+    theme: "fanaovan-tsoa",
+    mg: "Aza ny am-bava no mamelona, fa ny asa no mampahory.",
+    fr: "Ce ne sont pas les paroles qui nourrissent, mais le travail qui fait peiner.",
+    meaning: "Hevitra : mamporisika ny olona mba hiasa mafy fa tsy ho tsara resaka fotsiny no ahazoana ny tsara.",
   },
   {
-    mg: "Ny voky mahatsiaro ny noana.",
-    fr: "Celui qui est rassasié se souvient de celui qui a faim.",
-    meaning: "Hevitra : raha efa nahalala ny fahasarotana ialahy, aza adino ireo izay mbola eo. Ny famindram-po manamasina ny fiarahamonina.",
+    theme: "fanaovan-tsoa",
+    mg: "Hitsikitsika tsy mandihy foana fa ao raha.",
+    fr: "Le faucon ne danse pas sans raison : il y a quelque chose.",
+    meaning: "Hevitra : misy antony sy antony foana ny fihetsika hafahafa na miafina ataon'ny olona iray — mariho.",
   },
 ];
 
@@ -570,40 +598,67 @@ export default function Home() {
             </h2>
           </div>
 
-          <div
-            key={currentOhabolana}
-            style={{
-              background: C.white, border: `1px solid ${C.border}`, borderRadius: 28,
-              padding: "50px 48px", textAlign: "center",
-              boxShadow: `0 30px 80px rgba(20,83,45,0.10)`,
-              animation: "fadeRise 0.8s ease-out", position: "relative",
-            }}
-          >
-            <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 3, background: `linear-gradient(90deg, transparent, ${C.green}, ${C.gold}, ${C.red}, transparent)` }} />
-            <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "clamp(1.5rem, 3vw, 2.1rem)", lineHeight: 1.4, color: C.greenDeep, margin: "0 0 22px", fontWeight: 500 }}>
-              « {OHABOLANA[currentOhabolana].mg} »
-            </p>
-            <p style={{ fontFamily: SERIF, fontSize: "0.95rem", color: C.textSoft, margin: "0 0 18px", fontStyle: "italic" }}>
-              {OHABOLANA[currentOhabolana].fr}
-            </p>
-            <p style={{ fontFamily: SERIF, fontSize: "1.05rem", color: C.text, margin: 0, lineHeight: 1.65, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-              {OHABOLANA[currentOhabolana].meaning}
-            </p>
+          {(() => {
+            const cur = OHABOLANA[currentOhabolana];
+            const t = THEMES[cur.theme];
+            return (
+              <div
+                key={currentOhabolana}
+                style={{
+                  background: C.white, border: `1px solid ${t.color}33`, borderRadius: 28,
+                  padding: "50px 48px", textAlign: "center",
+                  boxShadow: `0 30px 80px ${t.color}1A`,
+                  animation: "fadeRise 0.8s ease-out", position: "relative",
+                }}
+              >
+                <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 3, background: `linear-gradient(90deg, transparent, ${t.color}, transparent)` }} />
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: t.bg, border: `1px solid ${t.color}33`, color: t.color, padding: "5px 14px", borderRadius: 100, fontSize: 10.5, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", fontFamily: DISPLAY, marginBottom: 22 }}>
+                  <span style={{ width: 5, height: 5, borderRadius: "50%", background: t.color }} />
+                  {t.label}
+                </div>
+                <p style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: "clamp(1.5rem, 3vw, 2.1rem)", lineHeight: 1.4, color: t.color, margin: "0 0 22px", fontWeight: 500 }}>
+                  « {cur.mg} »
+                </p>
+                <p style={{ fontFamily: SERIF, fontSize: "0.95rem", color: C.textSoft, margin: "0 0 18px", fontStyle: "italic" }}>
+                  {cur.fr}
+                </p>
+                <p style={{ fontFamily: SERIF, fontSize: "1.05rem", color: C.text, margin: 0, lineHeight: 1.65, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+                  {cur.meaning}
+                </p>
+              </div>
+            );
+          })()}
+
+          <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 28, flexWrap: "wrap" }}>
+            {OHABOLANA.map((o, i) => {
+              const t = THEMES[o.theme];
+              const active = i === currentOhabolana;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setCurrentOhabolana(i)}
+                  aria-label={`Ohabolana ${i + 1}`}
+                  style={{
+                    width: active ? 32 : 10, height: 10, borderRadius: 5,
+                    border: "none", background: active ? t.color : `${t.color}50`,
+                    cursor: "pointer", transition: "width 0.3s, background 0.3s",
+                  }}
+                />
+              );
+            })}
           </div>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 28 }}>
-            {OHABOLANA.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentOhabolana(i)}
-                aria-label={`Ohabolana ${i + 1}`}
-                style={{
-                  width: i === currentOhabolana ? 28 : 8, height: 8, borderRadius: 4,
-                  border: "none", background: i === currentOhabolana ? C.greenDeep : C.border,
-                  cursor: "pointer", transition: "width 0.3s, background 0.3s",
-                }}
-              />
-            ))}
+          {/* Theme legend */}
+          <div style={{ display: "flex", justifyContent: "center", gap: 14, marginTop: 22, flexWrap: "wrap" }}>
+            {(Object.keys(THEMES) as Theme[]).map((k) => {
+              const t = THEMES[k];
+              return (
+                <span key={k} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: SERIF, fontStyle: "italic", fontSize: 12, color: C.textMuted }}>
+                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: t.color }} />
+                  {t.fr}
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>
