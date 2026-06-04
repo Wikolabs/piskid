@@ -28,37 +28,38 @@ const C = {
 const SERIF = `"Cormorant Garamond", Georgia, serif`;
 const DISPLAY = `"Playfair Display", Georgia, serif`;
 
-// ─── Authentic Malagasy ohabolana — verified from cultural sources ─────────────
+// ─── Verified authentic Malagasy ohabolana ────────────────────────────────────
+// Sources : tahiry mpampianatra fanao malagasy (Cousins, Houlder, ohabolana.org).
 const OHABOLANA = [
+  {
+    mg: "Aleo very tsikalakalan-karena toy izay very tsikalakalam-pihavanana.",
+    fr: "Mieux vaut perdre un peu d'argent que de perdre un peu du lien de parenté.",
+    meaning: "Hevitra : mihoatra ny vola sy ny harena ny fihavanana. Aza atakalo amin'ny anjara kely ny rohim-pihavanana.",
+  },
+  {
+    mg: "Ny fihavanana toy ny landihazo, mora tapaka raha hetsehina mafy.",
+    fr: "Le fihavanana est comme la soie : il rompt facilement si on le manipule brutalement.",
+    meaning: "Hevitra : ny rohy mamato ny olona dia mila hatsaram-panahy sy faharetana. Ataovy malefaka ny fitondrana ny havana.",
+  },
   {
     mg: "Ny teny tsy mba mafy fa ny vato no mafy.",
     fr: "Ce n'est pas la parole qui est dure, c'est la pierre.",
-    meaning: "Hevitra : ny teny, na dia mety hanaitra aza, dia tsy maharatra raha vakiana am-pitiavana. Tandremo ny fomba fitenenana.",
+    meaning: "Hevitra : ny teny dia mahay manimba na manasitrana — fidio amim-pitandremana, fa ny ratra avy amin'ny teny dia ela vao sitrana.",
   },
   {
-    mg: "Tsy misy hazo tsy mihofahofa rehefa misy rivotra.",
-    fr: "Aucun arbre ne reste immobile quand le vent souffle.",
-    meaning: "Hevitra : ny olon-drehetra, na dia ny mafy aza, dia iharan'ny fitsapana. Aza mihevitra ny tenanao ho irery.",
-  },
-  {
-    mg: "Aleo very tsikalakalan-karena toy izay very tsikalakalam-pihavanana.",
-    fr: "Mieux vaut perdre un peu d'argent que de perdre le lien de parenté.",
-    meaning: "Hevitra : ambonin'ny vola sy ny harena ny fihavanana. Aza atakalo amin'ny anjara kely ny rohy lalim-paka.",
+    mg: "Tsy misy hazo tsy mihofahofa.",
+    fr: "Aucun arbre ne reste immobile (sans osciller).",
+    meaning: "Hevitra : ny olon-drehetra, na ny matanjaka aza, dia iharan'ny fitsapana. Mariho fa tsy irery ialahy.",
   },
   {
     mg: "Aleo maty rahampitso toy izay maty androany.",
     fr: "Mieux vaut mourir demain qu'aujourd'hui.",
-    meaning: "Hevitra : aza kivy. Ny rahampitso dia mety hanome valiny izay tsy hitanao androany. Mahareta hatramin'ny farany.",
+    meaning: "Hevitra : aza kivy androany. Ny rahampitso dia mety hitondra valiny izay tsy hita androany — mahareta amim-panantenana.",
   },
   {
     mg: "Ny voky mahatsiaro ny noana.",
     fr: "Celui qui est rassasié se souvient de celui qui a faim.",
-    meaning: "Hevitra : raha mbola nikorontana ihany koa ialahy, aza adino izay manan-jara latsaka. Ny famindram-po dia voninahitra.",
-  },
-  {
-    mg: "Ny fahalalana toy ny voantongon-tsofina, mitombo amin'ny fihainoana.",
-    fr: "La connaissance est comme le lobe de l'oreille : elle grandit en écoutant.",
-    meaning: "Hevitra : ny olona hendry dia mihaino aloha, miteny aoriana. Aza menatra ny manontany; ny fanafenana ny tsy fahalalana no tena harena very.",
+    meaning: "Hevitra : raha efa nahalala ny fahasarotana ialahy, aza adino ireo izay mbola eo. Ny famindram-po manamasina ny fiarahamonina.",
   },
 ];
 
@@ -94,14 +95,14 @@ const CHAPTERS = [
     icon: "compass" as const,
   },
   {
-    key: "fiarovana",
-    title: "Fiarovana",
-    fr: "Anti-arnaque mpisikidy",
-    desc: "Misy mpisikidy sandoka mampiasa ny tahotry ny olona vahan'aretina sy tsy fananana. iMahay miaro sy mitarika — maimaim-poana.",
+    key: "lalana",
+    title: "Lalana",
+    fr: "Sentier de vie",
+    desc: "Monoro ny lalana tokony ho aleha mba hahay hamindra raha tojo ny sarotra sy ny olana. Toro-hevitra mazava avy amin'ny fahendrena nentin-drazana.",
     color: C.redDeep,
     bg: C.redSoft,
     glow: C.redGlow,
-    icon: "shield" as const,
+    icon: "compass" as const,
   },
 ];
 
@@ -438,7 +439,7 @@ export default function Home() {
             <a href="#ohabolana" style={{ fontSize: 14, color: C.textMuted, textDecoration: "none", fontWeight: 500 }}>Ohabolana</a>
             <a href="#mpampianatra" style={{ fontSize: 14, color: C.textMuted, textDecoration: "none", fontWeight: 500 }}>Mpampianatra</a>
             <a href="#piliers" style={{ fontSize: 14, color: C.textMuted, textDecoration: "none", fontWeight: 500 }}>Andry</a>
-            <a href="#fiarovana" style={{ fontSize: 14, color: C.redDeep, textDecoration: "none", fontWeight: 600 }}>Fiarovana</a>
+            <a href="#lalana" style={{ fontSize: 14, color: C.redDeep, textDecoration: "none", fontWeight: 600 }}>Lalana</a>
           </div>
         </div>
       </nav>
@@ -501,7 +502,7 @@ export default function Home() {
             iMahay dia mpampianatra IA novolavolain&apos;ny <strong style={{ color: C.greenDeep, fontWeight: 600 }}>zokiolona</strong>,
             ny <strong style={{ color: C.redDeep, fontWeight: 600 }}>ray aman-dreny</strong>, ny{" "}
             <strong style={{ color: C.gold, fontWeight: 600 }}>manam-pahaizana malagasy</strong>
-            {" "}sy ny kolontsain&apos;ny tanindrazana. Mihaino, manoro, miaro — sady miaro anao amin&apos;ny mpisikidy sandoka.
+            {" "}sy ny kolontsain&apos;ny tanindrazana. Mihaino, manoro ny lalana tokony ho aleha, manampy hamindra raha tojo ny sarotra.
           </p>
           <p style={{ fontSize: 13, color: C.textSoft, fontStyle: "italic", fontFamily: SERIF, margin: "0 auto 40px", maxWidth: 640 }}>
             <em>La sagesse des ancêtres te parle maintenant. iMahay est formé par les anciens, parents, érudits et la culture malgache. Il écoute, conseille, protège.</em>
@@ -659,40 +660,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── FIAROVANA — Anti-arnaque ──────────────────────────────────────── */}
-      <section id="fiarovana" style={{ padding: "100px 24px", position: "relative", zIndex: 1, background: `linear-gradient(180deg, ${C.white} 0%, ${C.redSoft} 100%)` }}>
+      {/* ─── LALANA — Sentier de vie ───────────────────────────────────────── */}
+      <section id="lalana" style={{ padding: "100px 24px", position: "relative", zIndex: 1, background: `linear-gradient(180deg, ${C.white} 0%, ${C.goldSoft} 100%)` }}>
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
           <div
             style={{
-              background: C.white, border: `2px solid ${C.red}30`, borderRadius: 28,
-              padding: "56px 48px", boxShadow: `0 30px 80px rgba(220,38,38,0.12)`,
+              background: C.white, border: `2px solid ${C.gold}30`, borderRadius: 28,
+              padding: "56px 48px", boxShadow: `0 30px 80px rgba(217,119,6,0.12)`,
               position: "relative", overflow: "hidden",
             }}
           >
-            <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: `radial-gradient(circle, ${C.redGlow} 0%, transparent 70%)`, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: -60, right: -60, width: 200, height: 200, borderRadius: "50%", background: `radial-gradient(circle, ${C.goldGlow} 0%, transparent 70%)`, pointerEvents: "none" }} />
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-              <Icon name="shield" color={C.red} size={36} />
-              <div style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: C.red, textTransform: "uppercase" }}>
-                Iraka fiarovana
+              <Icon name="compass" color={C.gold} size={36} />
+              <div style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 700, letterSpacing: 3, color: C.gold, textTransform: "uppercase" }}>
+                Lalana — Sentier de vie
               </div>
             </div>
             <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 600, color: C.text, margin: "0 0 18px", lineHeight: 1.2 }}>
-              Misy mpisikidy <em style={{ fontFamily: SERIF, fontStyle: "italic", color: C.redDeep }}>sandoka</em> mampiasa ny tahotry ny olona.
+              Monoro ny lalana tokony <em style={{ fontFamily: SERIF, fontStyle: "italic", color: C.gold }}>ho aleha</em>.
             </h2>
             <p style={{ fontFamily: SERIF, fontSize: "1.15rem", lineHeight: 1.7, color: C.textMuted, margin: "0 0 16px", fontStyle: "italic" }}>
-              Rehefa misy olona marary, kivy, na mitady valiny — misy mpaka tombony amin&apos;ny fahatsorana,
-              manolotra fampanantenana foana sy vidiny avo. iMahay manolotra safidy hafa : ny tena
-              <strong style={{ color: C.greenDeep }}> fahendrena </strong>nentin-drazana, tsy misy fandoavam-bola, tsy misy famitahana.
+              Rehefa tojo ny sarotra sy ny olana, dia mila <strong style={{ color: C.greenDeep }}>fanazavana mazava</strong> sy
+              {" "}<strong style={{ color: C.gold }}>torohevitra azo itokisana</strong>. iMahay mihaino aloha, manaja ny safidinao,
+              ary manoro ny dingana tokony ho atao mba hahafahana mamindra amim-pahatoniana — araka ny fahendrena nentin-drazana.
             </p>
             <p style={{ fontFamily: SERIF, fontSize: "0.95rem", lineHeight: 1.6, color: C.textSoft, margin: "0 0 24px", fontStyle: "italic" }}>
-              <em>Trop de faux mpisikidy exploitent la peur. iMahay offre une alternative : la vraie sagesse des razana, gratuite, sans manipulation.</em>
+              <em>iMahay accompagne : il indique le chemin à suivre pour savoir avancer quand on traverse une difficulté.</em>
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
               {[
                 { label: "Maimaim-poana", color: C.green },
                 { label: "Tsy tonon-anarana", color: C.gold },
-                { label: "Tsy misy fampanantenana foana", color: C.red },
-                { label: "Torohevitra mazava", color: C.greenDeep },
+                { label: "Mihaino aloha", color: C.greenDeep },
+                { label: "Manoro ny lalana", color: C.red },
               ].map((b) => (
                 <div key={b.label} style={{ padding: "8px 16px", borderRadius: 100, background: `${b.color}15`, border: `1px solid ${b.color}30`, color: b.color, fontSize: 13, fontWeight: 600, fontFamily: DISPLAY }}>
                   ✓ {b.label}
